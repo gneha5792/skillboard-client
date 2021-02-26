@@ -4,11 +4,11 @@ export const fetchWrapper = {
   put,
   delete: _delete,
 };
-
+console.log(process.env);
 const serverUri =
-  process.env.NODE_ENV === "production"
-    ? "https://unbaised-skillboard-server.herokuapp.com"
-    : "http://localhost:3001";
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3001"
+    : "https://unbaised-skillboard-server.herokuapp.com";
 function get(url) {
   const requestOptions = {
     method: "GET",
