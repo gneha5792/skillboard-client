@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "skill_group": 1,
+    "skill": "Adobe Systems Adobe Flex"
+  },
+  {
+    "id": 2,
+    "skill_group": 1,
+    "skill": "AJAX"
+  },
+  {
+    "id": 3,
+    "skill_group": 1,
+    "skill": "Apache Struts"
+  },
+  {
+    "id": 4,
+    "skill_group": 1,
+    "skill": "Apache Tomcat"
+  },
+  {
+    "id": 5,
+    "skill_group": 1,
+    "skill": "Backbone.js"
+  },
+  {
+    "id": 6,
+    "skill_group": 1,
+    "skill": "Bootstrap"
+  },
+  {
+    "id": 7,
+    "skill_group": 1,
+    "skill": "Cascading Style Sheets CSS"
+  },
+  {
+    "id": 8,
+    "skill_group": 1,
+    "skill": "Django"
+  },
+  {
+    "id": 9,
+    "skill_group": 1,
+    "skill": "Drupal"
+  },
+  {
+    "id": 10,
+    "skill_group": 1,
+    "skill": "Dynamic hypertext markup language DHTML"
+  },
+  {
+    "id": 11,
+    "skill_group": 1,
+    "skill": "Enterprise JavaBeans"
+  },
+  {
+    "id": 12,
+    "skill_group": 1,
+    "skill": "Ext JS"
+  },
+  {
+    "id": 13,
+    "skill_group": 1,
+    "skill": "Extensible HyperText Markup Language XHTML"
+  },
+  {
+    "id": 14,
+    "skill_group": 1,
+    "skill": "Extensible stylesheet language transformations XSLT"
+  },
+  {
+    "id": 15,
+    "skill_group": 1,
+    "skill": "FlexBox"
+  },
+  {
+    "id": 16,
+    "skill_group": 1,
+    "skill": "Google AngularJS"
+  },
+  {
+    "id": 17,
+    "skill_group": 1,
+    "skill": "HashiCorp Vagrant"
+  },
+  {
+    "id": 18,
+    "skill_group": 1,
+    "skill": "Hypertext markup language HTML"
+  },
+  {
+    "id": 19,
+    "skill_group": 1,
+    "skill": "JavaScript"
+  },
+  {
+    "id": 20,
+    "skill_group": 1,
+    "skill": "JavaScript Object Notation JSON"
+  },
+  {
+    "id": 21,
+    "skill_group": 1,
+    "skill": "Jekyll"
+  },
+  {
+    "id": 22,
+    "skill_group": 1,
+    "skill": "JetBrains PhpStorm"
+  },
+  {
+    "id": 23,
+    "skill_group": 1,
+    "skill": "LAMP Stack"
+  },
+  {
+    "id": 24,
+    "skill_group": 1,
+    "skill": "MeteorJS"
+  },
+  {
+    "id": 25,
+    "skill_group": 1,
+    "skill": "Microsoft Active Server Pages ASP"
+  },
+  {
+    "id": 26,
+    "skill_group": 1,
+    "skill": "Microsoft ASP.NET"
+  },
+  {
+    "id": 27,
+    "skill_group": 1,
+    "skill": "Microsoft ASP.NET Core MVC"
+  },
+  {
+    "id": 28,
+    "skill_group": 1,
+    "skill": "Microsoft Commerce Server"
+  },
+  {
+    "id": 29,
+    "skill_group": 1,
+    "skill": "Microsoft Visual InterDev"
+  },
+  {
+    "id": 30,
+    "skill_group": 1,
+    "skill": "Node.js"
+  },
+  {
+    "id": 31,
+    "skill_group": 1,
+    "skill": "Nunjucks"
+  },
+  {
+    "id": 32,
+    "skill_group": 1,
+    "skill": "Oracle JavaServer Pages JSP"
+  },
+  {
+    "id": 33,
+    "skill_group": 1,
+    "skill": "PhantomJS"
+  },
+  {
+    "id": 34,
+    "skill_group": 1,
+    "skill": "PHP: Hypertext Preprocessor"
+  },
+  {
+    "id": 35,
+    "skill_group": 1,
+    "skill": "React"
+  },
+  {
+    "id": 36,
+    "skill_group": 1,
+    "skill": "RequireJS"
+  },
+  {
+    "id": 37,
+    "skill_group": 1,
+    "skill": "Ruby on Rails"
+  },
+  {
+    "id": 38,
+    "skill_group": 1,
+    "skill": "Spring Framework"
+  },
+  {
+    "id": 39,
+    "skill_group": 1,
+    "skill": "Zend Framework"
+  }
+]

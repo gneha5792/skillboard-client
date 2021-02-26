@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Trainee",
+    "code": "trainee"
+  },
+  {
+    "id": 2,
+    "title": "Associate L1",
+    "code": "ADE1"
+  },
+  {
+    "id": 3,
+    "title": "Associate L2",
+    "code": "ADE1"
+  },
+  {
+    "id": 4,
+    "title": "Senior Associate L1",
+    "code": "SADE1"
+  },
+  {
+    "id": 5,
+    "title": "Senior Associate L2",
+    "code": "SADE2"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "skill_group": "Web platform development"
+  },
+  {
+    "id": 2,
+    "skill_group": "Frameworks"
+  },
+  {
+    "id": 3,
+    "skill_group": "DevOps"
+  },
+  {
+    "id": 4,
+    "skill_group": "Cloud"
+  },
+  {
+    "id": 5,
+    "skill_group": "Microservices"
+  }
+]
