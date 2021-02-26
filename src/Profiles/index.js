@@ -356,7 +356,7 @@ export default function Profile() {
                           color="primary"
                           size="small"
                           onClick={() => {
-                            navigate(`/profiles/u/${row.id}`);
+                            navigate(`/profiles/u/${row._id}`);
                           }}
                         >
                           View

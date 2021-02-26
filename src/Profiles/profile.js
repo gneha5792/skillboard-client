@@ -82,7 +82,7 @@ const Profile = (props) => {
   };
 
   React.useEffect(() => {
-    fetchWrapper.get(`/profiles/${props.profileId}`).then((resp) => {
+    fetchWrapper.get(`/profiles/u/${props.profileId}`).then((resp) => {
       setProfileData(resp[0]);
     });
   }, []);
@@ -105,14 +105,14 @@ const Profile = (props) => {
                       <Avatar
                         alt="Remy Sharp"
                         src={
-                          profileData.id
-                            ? `https://randomuser.me/api/portraits/women/${profileData.id}.jpg`
+                          profileData._id
+                            ? `https://randomuser.me/api/portraits/men/1.jpg`
                             : ""
                         }
                         className={classes.large}
                       />
                       <Typography color="textPrimary">
-                        {profileData.name} {profileData.id}
+                        {profileData.name}
                       </Typography>
                       <Typography color="textSecondary">
                         {profileData.designation}
@@ -177,7 +177,7 @@ const Profile = (props) => {
                 <CardContent>
                   <Box display="flex" justifyContent="space-between">
                     <Typography variant="h5" gutterBottom>
-                      {profileData.favorite}
+                      {profileData.feedback && profileData.feedback.length}
                     </Typography>
                     <FeedbackIcon color="primary" fontSize="large" />
                   </Box>
@@ -190,7 +190,7 @@ const Profile = (props) => {
                 <CardContent>
                   <Box display="flex" justifyContent="space-between">
                     <Typography variant="h5" gutterBottom>
-                      {profileData.likes}
+                      {profileData.likes ? profileData.likes : 0}
                     </Typography>
                     <FavoriteIcon color="secondary" fontSize="large" />
                   </Box>
