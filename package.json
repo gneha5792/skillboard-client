@@ -2,6 +2,7 @@
   "name": "unbasiedskillboard",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://skillboard-server.herokuapp.com",
   "dependencies": {
     "@devexpress/dx-react-chart": "^2.7.4",
     "@devexpress/dx-react-chart-material-ui": "^2.7.4",
