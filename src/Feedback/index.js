@@ -8,6 +8,7 @@ export default function Feedback(props) {
   const [name, setName] = useState("");
   const [jobData, setJobData] = useState({});
   const [questions, setQuestions] = useState([]);
+  const [payload, setPayload] = useState({});
   useEffect(() => {
     fetchWrapper.get(`/scheduledJob/j/${props.jobId}`).then((resp) => {
       setJobData(resp[0]);
@@ -22,11 +23,13 @@ export default function Feedback(props) {
       setName(jobData.feedback_for.name);
     }
   }, [jobData]);
-  const handleChange = (event, newValue) => {
-    console.log(newValue, event);
-  };
+
   return (
-    <div>
+    <form
+      onSubmit={() => {
+        console.log("submit");
+      }}
+    >
       <Typography variant="h5" gutterBottom>
         {`Feedback for ${name}`}
       </Typography>
@@ -37,13 +40,14 @@ export default function Feedback(props) {
           </Typography>
           <CustomizedSlider
             id={`q-${index}`}
-            handleChange={handleChange}
+            payload={payload}
+            setPayload={setPayload}
           ></CustomizedSlider>
         </div>
       ))}
-      <Button variant="contained" color="primary">
+      <Button type="submit" variant="contained" color="primary">
         Submit FeedBack
       </Button>
-    </div>
+    </form>
   );
 }

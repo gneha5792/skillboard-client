@@ -1,9 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
-import Typography from "@material-ui/core/Typography";
-import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,6 +43,9 @@ const PrettoSlider = withStyles({
 
 export default function CustomizedSlider(props) {
   const classes = useStyles();
+  const handleChange = (event, newValue) => {
+    props.setPayload({ ...props.payload, [props.id]: newValue });
+  };
 
   return (
     <div className={classes.root}>
@@ -53,7 +53,7 @@ export default function CustomizedSlider(props) {
         valueLabelDisplay="auto"
         aria-label="pretto slider"
         defaultValue={20}
-        onChange={props.handleChange}
+        onChange={handleChange}
       />
       <div className={classes.margin} />
     </div>
