@@ -5,10 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store";
+import { createHistory, LocationProvider } from "@reach/router";
+
+let history = createHistory(window);
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <LocationProvider history={history}>
+        <App />
+      </LocationProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

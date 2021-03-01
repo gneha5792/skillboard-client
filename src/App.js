@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { Router } from "@reach/router";
+import { Router, useLocation } from "@reach/router";
 import { fetchWrapper } from "./Services/fetchWrapper";
 
 import Navigation from "./Navigation";
@@ -21,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     backgroundColor: "#f7f9fc !important",
   },
+  centeredContent: {
+    display: "flex",
+    height: "100vh",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
@@ -30,11 +36,22 @@ const useStyles = makeStyles((theme) => ({
 
 function App(props) {
   const classes = useStyles();
+  const location = useLocation();
   React.useEffect(() => {
+    props.authenticateUser({ location });
     fetchWrapper.get("/skills/settings").then((resp) => {
       props.updateState(resp);
     });
   }, []);
+  if (props.auth && props.auth.isLoggedIn) {
+    return (
+      <div className={(classes.root, classes.centeredContent)}>
+        <Router>
+          <Feedback path="/feedback/id/:jobId" />
+        </Router>
+      </div>
+    );
+  }
   return (
     <div className={classes.root}>
       <Navigation />
@@ -55,10 +72,16 @@ function App(props) {
     </div>
   );
 }
-
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth,
+  };
+};
 const mapDispatchToProps = (dispatch) => ({
+  authenticateUser: (payload) =>
+    dispatch({ type: "AUTHENTICATE_USER", payload }),
   updateState: (payload) =>
     dispatch({ type: "UPDATE_SKILL_SETTINGS", payload }),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

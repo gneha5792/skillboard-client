@@ -1,10 +1,35 @@
 import React, { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
+import Card from "@material-ui/core/Card";
+import Box from "@material-ui/core/Box";
+import { red } from "@material-ui/core/colors";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Avatar from "@material-ui/core/Avatar";
+
 import { fetchWrapper } from "../Services/fetchWrapper";
 import Typography from "@material-ui/core/Typography";
 import CustomizedSlider from "./slider";
 import Button from "@material-ui/core/Button";
 
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+    padding: 24,
+  },
+  avatar: {
+    backgroundColor: red[500],
+  },
+  action: {
+    marginTop: 30,
+  },
+});
+
 export default function Feedback(props) {
+  const classes = useStyles();
+
   const [name, setName] = useState("");
   const [jobData, setJobData] = useState({});
   const [questions, setQuestions] = useState([]);
@@ -25,29 +50,45 @@ export default function Feedback(props) {
   }, [jobData]);
 
   return (
-    <form
-      onSubmit={() => {
-        console.log("submit");
-      }}
-    >
-      <Typography variant="h5" gutterBottom>
-        {`Feedback for ${name}`}
-      </Typography>
-      {questions.map((question, index) => (
-        <div>
-          <Typography variant="h6" gutterBottom>
-            {question.q.replace("#PERSON", name)}
-          </Typography>
-          <CustomizedSlider
-            id={`q-${index}`}
-            payload={payload}
-            setPayload={setPayload}
-          ></CustomizedSlider>
-        </div>
-      ))}
-      <Button type="submit" variant="contained" color="primary">
-        Submit FeedBack
-      </Button>
-    </form>
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Card className={classes.root}>
+          <CardContent>
+            <Box display="flex" alignItems="center" mb={5}>
+              <Avatar aria-label="name" className={classes.avatar}>
+                {name.slice(0, 1)}
+              </Avatar>
+              &nbsp;&nbsp;&nbsp;
+              <Typography component="h5" variant="h5">
+                {`Feedback for ${name}`}
+              </Typography>
+              <Typography
+                className={classes.title}
+                color="textSecondary"
+                gutterBottom
+              ></Typography>
+            </Box>
+            {questions.map((question, index) => (
+              <div>
+                <Typography variant="h6" gutterBottom>
+                  {question.q.replace("#PERSON", name)}
+                </Typography>
+                <CustomizedSlider
+                  id={`q-${index}`}
+                  payload={payload}
+                  setPayload={setPayload}
+                ></CustomizedSlider>
+              </div>
+            ))}
+          </CardContent>
+          <CardActions className={classes.action}>
+            <Button type="submit" variant="contained" color="primary">
+              Submit FeedBack
+            </Button>
+          </CardActions>
+        </Card>
+      </Container>
+    </React.Fragment>
   );
 }
