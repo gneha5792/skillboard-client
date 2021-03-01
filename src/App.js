@@ -13,6 +13,7 @@ import SkillProfiles from "./SkillManagement/SkillProfile";
 import EditSkillProfiles from "./SkillManagement/SkillProfile/edit";
 import Profiles from "./Profiles/index";
 import Profile from "./Profiles/profile";
+import Feedback from "./Feedback/index";
 import SystemSettings from "./Settings/system";
 
 const useStyles = makeStyles((theme) => ({
@@ -47,6 +48,7 @@ function App(props) {
           <EditSkillProfiles path="/skill-profiles/:profileId" />
           <Profiles path="/profiles" />
           <Profile path="/profiles/u/:profileId" />
+          <Feedback path="/feedback/id/:jobId" />
           <SystemSettings path="/settings/system" />
         </Router>
       </main>
