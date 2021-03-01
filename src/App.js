@@ -47,7 +47,7 @@ function App(props) {
     return (
       <div className={(classes.root, classes.centeredContent)}>
         <Router>
-          <Feedback path="/feedback/id/:jobId" />
+          <Feedback path="/feedback/:jobId/:userId" />
         </Router>
       </div>
     );
@@ -65,7 +65,6 @@ function App(props) {
           <EditSkillProfiles path="/skill-profiles/:profileId" />
           <Profiles path="/profiles" />
           <Profile path="/profiles/u/:profileId" />
-          <Feedback path="/feedback/id/:jobId" />
           <SystemSettings path="/settings/system" />
         </Router>
       </main>
