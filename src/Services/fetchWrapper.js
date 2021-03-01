@@ -4,14 +4,14 @@ export const fetchWrapper = {
   put,
   delete: _delete,
 };
-console.log(process.env);
+
 const serverUri = "https://skillboard-server.herokuapp.com";
+//const serverUri = "http://localhost:3001";
 function get(url) {
   const requestOptions = {
     method: "GET",
   };
   const uri = `${serverUri}${url}`;
-  console.log(uri);
   return fetch(uri, requestOptions).then(handleResponse);
 }
 
@@ -21,7 +21,8 @@ function post(url, body) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   };
-  return fetch(url, requestOptions).then(handleResponse);
+  const uri = `${serverUri}${url}`;
+  return fetch(uri, requestOptions).then(handleResponse);
 }
 
 function put(url, body) {
@@ -30,7 +31,8 @@ function put(url, body) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   };
-  return fetch(url, requestOptions).then(handleResponse);
+  const uri = `${serverUri}${url}`;
+  return fetch(uri, requestOptions).then(handleResponse);
 }
 
 // prefixed with underscored because delete is a reserved word in javascript
