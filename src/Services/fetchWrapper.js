@@ -5,7 +5,7 @@ export const fetchWrapper = {
   delete: _delete,
 };
 console.log(process.env);
-const serverUri = "https://skillboard-server.herokuapp.com";
+const serverUri = "http://localhost:3001";
 function get(url) {
   const requestOptions = {
     method: "GET",

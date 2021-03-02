@@ -44,7 +44,7 @@ function App(props) {
           <Skill path="/skills" />
           <SkillGroup path="/skill-groups" />
           <SkillProfiles path="/skill-profiles" />
-          <EditSkillProfiles path="/skill-profiles/:profileId" />
+          <EditSkillProfiles path="/skill_profiles/u/:profileId" />
           <Profiles path="/profiles" />
           <Profile path="/profiles/u/:profileId" />
           <SystemSettings path="/settings/system" />

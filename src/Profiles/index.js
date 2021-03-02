@@ -54,7 +54,7 @@ function stableSort(array, comparator) {
 const headCells = [
   { id: "name", label: "NAME" },
   { id: "designation", label: "DESIGNATION" },
-  { id: "experiance", label: "EXPERIANCE" },
+  { id: "experience", label: "EXPERIENCE" },
   { id: "score", label: "SCORE" },
   { id: "action", label: "ACTION" },
 ];

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\Profiles",
+    "\\src\\SkillManagement",
+    "\\src\\SkillManagement\\Skill",
+    "\\src\\SkillManagement\\SkillGroup",
+    "\\src\\SkillManagement\\SkillProfile"
+  ],
+  "SelectedNode": "\\src\\SkillManagement\\SkillProfile\\edit.js",
+  "PreviewInSolutionExplorer": false
+}
