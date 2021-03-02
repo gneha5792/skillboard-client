@@ -22,6 +22,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import FilterListIcon from "@material-ui/icons/FilterList";
 import Button from "@material-ui/core/Button";
 import skillGroups from "../../data/skillGroup.json";
+import { fetchWrapper } from "../../Services/fetchWrapper";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -281,8 +282,11 @@ export default function SkillGroup() {
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
-  useEffect(() => {
-    setRows(skillGroups);
+    useEffect(() => {
+        fetchWrapper.get("/skill_groups").then((resp) => {
+            setRows(resp);
+        });
+   // setRows(skillGroups);
   }, []);
 
   return (
@@ -305,40 +309,41 @@ export default function SkillGroup() {
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
             />
-            <TableBody>
-              {stableSort(rows, getComparator(order, orderBy))
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row, index) => {
-                  const isItemSelected = isSelected(row.id);
-                  const labelId = `enhanced-table-checkbox-${index}`;
+                      <TableBody>
+                          {
+                              stableSort(rows, getComparator(order, orderBy))
+                                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                  .map((row, index) => {
+                                      const isItemSelected = isSelected(row.id);
+                                      const labelId = `enhanced-table-checkbox-${index}`;
+                                      let values = Object.values(row.skills);
+                                      return (
+                                          <TableRow
+                                              hover
+                                              onClick={(event) => handleClick(event, row.id)}
+                                              role="checkbox"
+                                              aria-checked={isItemSelected}
+                                              tabIndex={-1}
+                                              key={row.id}
+                                              selected={isItemSelected}
+                                          >
+                                              <TableCell padding="checkbox">
+                                                  <Checkbox
+                                                      checked={isItemSelected}
+                                                      inputProps={{ "aria-labelledby": labelId }}
+                                                  />
+                                              </TableCell>
 
-                  return (
-                    <TableRow
-                      hover
-                      onClick={(event) => handleClick(event, row.id)}
-                      role="checkbox"
-                      aria-checked={isItemSelected}
-                      tabIndex={-1}
-                      key={row.id}
-                      selected={isItemSelected}
-                    >
-                      <TableCell padding="checkbox">
-                        <Checkbox
-                          checked={isItemSelected}
-                          inputProps={{ "aria-labelledby": labelId }}
-                        />
-                      </TableCell>
-
-                      <TableCell>{row.skill_group}</TableCell>
-                    </TableRow>
-                  );
-                })}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
-            </TableBody>
+                                              <TableCell>{row.group_label}</TableCell>
+                                          </TableRow>
+                                      );
+                                  })}
+                          {emptyRows > 0 && (
+                              <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
+                                  <TableCell colSpan={6} />
+                              </TableRow>
+                          )}
+                      </TableBody>
           </Table>
         </TableContainer>
         <TablePagination
